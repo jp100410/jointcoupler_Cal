@@ -191,9 +191,9 @@ with col_plot:
     st.subheader("N-M 相関図")
     fig, ax = plt.subplots(figsize=(6, 3.71))#黄金比
     # グラフの重なりを考慮し、塗りつぶし(alpha)と実線を組み合わせて描画。
-    ax.plot(df_short["N"], df_short["M"], color='blue', lw=2, label="短期")
+    ax.plot(df_short["N"], df_short["M"], color='blue', lw=2, label="Short term")
     ax.fill_between(df_short["N"], df_short["M"], 0, color='blue', alpha=0.05)
-    ax.plot(df_ult["N"], df_ult["M"], color='red', lw=2, label="終局")
+    ax.plot(df_ult["N"], df_ult["M"], color='red', lw=2, label="Ultimate")
     ax.fill_between(df_ult["N"], df_ult["M"], 0, color='red', alpha=0.05)
     # 【表示調整】耐力曲線が中心に来るよう、X軸（軸力）とY軸（曲げ）の範囲を動的に計算。
     n_min_all, n_max_all = min(df_short["N"].min(), df_ult["N"].min()), max(df_short["N"].max(), df_ult["N"].max())
